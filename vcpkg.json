@@ -1,0 +1,19 @@
+{
+    "name": "versions",
+    "version": "1.0.0",
+    "dependencies": [
+        {
+            "name": "fmt",
+            "platform": "(windows & x64)"
+        },
+        {
+            "name": "gtest"
+        },
+        {
+            "name": "protobuf"
+        },
+        {
+            "name": "nlohmann-json"
+        }
+    ]
+}
