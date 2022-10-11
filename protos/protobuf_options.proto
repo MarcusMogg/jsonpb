@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/descriptor.proto";
+
+package protobuf_options;
+
+extend google.protobuf.MessageOptions {
+  optional bool enum_uint = 50000;  // true enum 转uint32 false 转字符串 默认false
+}
+
+extend google.protobuf.FieldOptions {
+  optional string alias_name = 51000;  // 别名
+  optional bool ignore = 51001;        // 转换时忽略
+}

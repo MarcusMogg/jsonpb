@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+import "protobuf_options.proto";
+
+package test_jsonpb;
+
+enum TestEnums {
+  TEST_A = 0;
+  TEST_B = 1;
+}
+
+message NestedMessage {
+  optional string nested_string = 1 [(protobuf_options.alias_name) = "NestedString"];
+  repeated bool nested_bool = 2 [(protobuf_options.alias_name) = "NestedBool"];
+  repeated TestEnums nested_enum = 3;
+  optional int32 nested_int32 = 4;
+}
+
+message TestMessage {
+  optional int32 test_int32_singular = 1;
+  repeated int32 test_int32_multiple = 2;
+  optional int64 test_int64_singular = 3;
+  repeated int64 test_int64_multiple = 4;
+  optional uint32 test_uint32_singular = 5;
+  repeated uint32 test_uint32_multiple = 6;
+  optional uint64 test_uint64_singular = 7;
+  repeated uint64 test_uint64_multiple = 8;
+  optional double test_double_singular = 9;
+  repeated double test_double_multiple = 10;
+  optional float test_float_singular = 11;
+  repeated float test_float_multiple = 12;
+  optional bool test_bool_singular = 13;
+  repeated bool test_bool_multiple = 14;
+  optional TestEnums test_enum_singular = 15;
+  repeated TestEnums test_enum_multiple = 16;
+  optional string test_string_singular = 17;
+  repeated string test_string_multiple = 18;
+  optional NestedMessage test_message_singular = 19;
+  repeated NestedMessage test_message_multiple = 20;
+}
+
+message TestAlias {
+  option (protobuf_options.enum_uint) = true;
+  optional int32 test_int32_singular = 1 [(protobuf_options.alias_name) = "TestInt32Singular"];
+  repeated int32 test_int32_multiple = 2 [(protobuf_options.alias_name) = "TestInt32Multiple"];
+  optional int64 test_int64_singular = 3 [(protobuf_options.alias_name) = "TestInt64Singular"];
+  repeated int64 test_int64_multiple = 4 [(protobuf_options.alias_name) = "TestInt64Multiple"];
+  optional uint32 test_uint32_singular = 5 [(protobuf_options.alias_name) = "TestUInt32Singular"];
+  repeated uint32 test_uint32_multiple = 6 [(protobuf_options.alias_name) = "TestUInt32Multiple"];
+  optional uint64 test_uint64_singular = 7 [(protobuf_options.alias_name) = "TestUInt64Singular"];
+  repeated uint64 test_uint64_multiple = 8 [(protobuf_options.alias_name) = "TestUInt64Multiple"];
+  optional double test_double_singular = 9 [(protobuf_options.alias_name) = "TestDoubleSingular"];
+  repeated double test_double_multiple = 10 [(protobuf_options.alias_name) = "TestDoubleMultiple"];
+  optional float test_float_singular = 11 [(protobuf_options.alias_name) = "TestFloatSingular"];
+  repeated float test_float_multiple = 12 [(protobuf_options.alias_name) = "TestFloatMultiple"];
+  optional bool test_bool_singular = 13 [(protobuf_options.alias_name) = "TestBoolSingular"];
+  repeated bool test_bool_multiple = 14 [(protobuf_options.alias_name) = "TestBoolMultiple"];
+  optional TestEnums test_enum_singular = 15 [(protobuf_options.alias_name) = "TestEnumSingular"];
+  repeated TestEnums test_enum_multiple = 16 [(protobuf_options.alias_name) = "TestEnumMultiple"];
+  optional string test_string_singular = 17 [(protobuf_options.alias_name) = "TestStringSingular"];
+  repeated string test_string_multiple = 18 [(protobuf_options.alias_name) = "TestStringMultiple"];
+  optional NestedMessage test_message_singular = 19
+      [(protobuf_options.alias_name) = "TestMessageSingular"];
+  repeated NestedMessage test_message_multiple = 20
+      [(protobuf_options.alias_name) = "TestMessageMultiple"];
+}
