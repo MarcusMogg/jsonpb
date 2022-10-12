@@ -37,6 +37,8 @@ message TestMessage {
   repeated string test_string_multiple = 18;
   optional NestedMessage test_message_singular = 19;
   repeated NestedMessage test_message_multiple = 20;
+  optional int32 test_int32_singular_ignore = 21[(protobuf_options.ignore) = true];
+  repeated int32 test_int32_multiple_ignore = 22[(protobuf_options.ignore) = true];
 }
 
 message TestAlias {
@@ -63,4 +65,6 @@ message TestAlias {
       [(protobuf_options.alias_name) = "TestMessageSingular"];
   repeated NestedMessage test_message_multiple = 20
       [(protobuf_options.alias_name) = "TestMessageMultiple"];
+  optional int32 test_int32_singular_ignore = 21 [(protobuf_options.alias_name) = "TestInt32Singular",(protobuf_options.ignore) = true];
+  repeated int32 test_int32_multiple_ignore = 22 [(protobuf_options.alias_name) = "TestInt32Multiple",(protobuf_options.ignore) = true];
 }
