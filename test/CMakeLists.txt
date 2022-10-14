@@ -1,14 +1,26 @@
-# file(GLOB_RECURSE HEADER_FILES "*.h")
-# file(GLOB_RECURSE CC_FILES "*.cc" "*.cpp")
+find_package(GTest CONFIG REQUIRED)
+
+enable_testing()
+
+file(GLOB test_files test_*.cc)
+
+message("test_files ${test_files}")
+
+add_executable(
+  jsonpb_test
+  ${test_files}
+)
 
 
-# add_library (test_jsonpb STATIC ${HEADER_FILES} ${CC_FILES})
+target_compile_features(jsonpb_test PRIVATE cxx_std_17)
 
-# target_compile_features(test_jsonpb PRIVATE cxx_std_17)
+target_link_libraries(jsonpb_test PRIVATE 
+    libjsonpb
+    GTest::gmock 
+    GTest::gtest 
+    GTest::gmock_main 
+    GTest::gtest_main
+)
 
-# target_link_libraries(test_jsonpb PRIVATE libjsonpb)
-
-# target_include_directories(test_jsonpb
-#     PUBLIC
-#         ${PROJECT_SOURCE_DIR}/
-# )
+include(GoogleTest)
+gtest_discover_tests(jsonpb_test)

@@ -14,5 +14,3 @@ target_include_directories(jsonpb_messages
         ${CMAKE_CURRENT_BINARY_DIR}/
 )
 
-message("Protobuf_INCLUDE_DIRS ${Protobuf_INCLUDE_DIRS}")
-message("CMAKE_CURRENT_BINARY_DIR  ${CMAKE_CURRENT_BINARY_DIR}")
