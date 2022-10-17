@@ -207,8 +207,8 @@ bool UpdateSingleFiledFromJson(
     HANDLE_TYPE(INT64, Int64, number_integer, int64_t);
     HANDLE_TYPE(UINT32, UInt32, number_unsigned, uint32_t);
     HANDLE_TYPE(UINT64, UInt64, number_unsigned, uint64_t);
-    HANDLE_TYPE(FLOAT, Float, number_float, float);
-    HANDLE_TYPE(DOUBLE, Double, number_float, double);
+    HANDLE_TYPE(FLOAT, Float, number, float);
+    HANDLE_TYPE(DOUBLE, Double, number, double);
     HANDLE_TYPE(BOOL, Bool, boolean, bool);
     HANDLE_TYPE(STRING, String, string, std::string);
 #undef HANDLE_TYPE
@@ -273,8 +273,8 @@ bool UpdateRepeatedFieldFromJson(
     HANDLE_TYPE(INT64, Int64, number_integer, int64_t);
     HANDLE_TYPE(UINT32, UInt32, number_unsigned, uint32_t);
     HANDLE_TYPE(UINT64, UInt64, number_unsigned, uint64_t);
-    HANDLE_TYPE(FLOAT, Float, number_float, float);
-    HANDLE_TYPE(DOUBLE, Double, number_float, double);
+    HANDLE_TYPE(FLOAT, Float, number, float);
+    HANDLE_TYPE(DOUBLE, Double, number, double);
     HANDLE_TYPE(BOOL, Bool, boolean, bool);
     HANDLE_TYPE(STRING, String, string, std::string);
 #undef HANDLE_TYPE

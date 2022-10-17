@@ -18,7 +18,7 @@ TEST(PbToJson, Simple) {
     }  
   )");
 
-  EXPECT_TRUE(!nlohmann::json::diff(expected, json).empty());
+  EXPECT_TRUE(nlohmann::json::diff(expected, json).empty());
 }
 
 TEST(JsonToPb, Simple) {
