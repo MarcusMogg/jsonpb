@@ -1,10 +1,12 @@
 {
-    "name": "versions",
+    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json",
+    "name": "jsonpb",
     "version": "1.0.0",
     "dependencies": [
         {
             "name": "fmt",
-            "platform": "(windows & x64)"
+            "platform": "(windows & x64)",
+            "version>=": "8.1.1"
         },
         {
             "name": "gtest"
@@ -15,5 +17,6 @@
         {
             "name": "nlohmann-json"
         }
-    ]
+    ],
+    "builtin-baseline": "2de7f388c5aac1f7d63c5986fe9b1b60e7d6bbb5"
 }
